@@ -1,0 +1,11 @@
+faker
+ipython
+isort
+parameterized
+pytest
+pytest-cov
+pytest-django
+pytest-sugar
+pytest-watch
+ruff
+taskipy

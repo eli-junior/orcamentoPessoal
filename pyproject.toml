@@ -1,0 +1,45 @@
+[tool.ruff]
+line-length = 140
+exclude = ['.venv', 'venv', 'migrations']
+target-version = "py311"
+
+[tool.ruff.mccabe]
+max-complexity = 10
+
+[tool.isort]
+profile = "django"
+line_length = 140
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "orcamento_pessoal.settings"
+python_files = "test_*.py"
+minversion = "7.4.0"
+pythonpath = "."
+addopts = """
+    -ra -q -s -x -vvv \
+    --doctest-modules \
+    --disable-pytest-warnings \
+    --cov=orcamento_pessoal \
+    --cov-report=html:coverage
+    """
+
+[tool.coverage.report]
+skip_empty = true
+branch = true
+source = "orcamento_pessoal/**/*.py"
+omit = [
+    "orcamento_pessoal/**/migrations/*.py",
+    "orcamento_pessoal/*.py",
+    "orcamento_pessoal/**/populate_recipes.py",
+    "orcamento_pessoal/**/factory.py"
+]
+
+[tool.taskipy.tasks]
+lint = 'make lint'
+format = 'make format'
+run = 'make run'
+migrate = 'make migrate'
+migrations = 'make migrations'
+shell = 'make shell'
+pre_test = 'make lint'
+test = 'make test'
