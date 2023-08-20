@@ -12,7 +12,7 @@
             "django": true,
             "justMyCode": true,
             "env": {
-                "DJANGO_SETTINGS_MODULE": "proj3ct.settings",
+                "DJANGO_SETTINGS_MODULE": "orcamento_pessoal.settings",
                 "PYTHONPATH": "${workspaceFolder}"
             }
         }
